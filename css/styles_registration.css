@@ -1,0 +1,54 @@
+
+.navbar{
+  height:3em;
+}
+/* service page  */
+.pags{
+  height: 40vh;
+  background-image: url("../Images/img/09_HotelsWithBabysittingServices__GrandVelas_GVRNKC1804huge.1541782145.jpg");
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.pags .wrapper-mian-header{
+  height: 40vh;
+}
+ 
+.card-big{
+  width: 50em;
+  overflow: hidden;
+}
+
+.bg-white{
+  background: transparent linear-gradient(90deg, #eaeaea 0%, #eaeaea 100%) 0% 0% no-repeat padding-box;
+}
+.bg-white .card{
+  background-color: white;
+}
+/* adm page  */
+/* card admin page  */
+.title-dash{
+  border-bottom: 0.1em;
+  border-style:dotted;
+  border-color: #260149;
+  padding-bottom: 0.2em;
+  width: 80vw;
+}
+.dash{
+  height: 27em;
+  margin-bottom: -1em;
+}
+.dash .card-wrapper{
+  width: 100vw;
+  
+}
+.card-dash{
+  width: 80vw;
+  overflow: hidden;
+}
+
+.include-dash{
+  width: 80vw;
+  height: 20em;
+  overflow: scroll;
+}

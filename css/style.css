@@ -1,0 +1,403 @@
+/* navegation */
+body{
+    overflow-x: hidden;
+    background-color:#EAEAEA;
+    font: normal normal bold Montserrat;
+    background-image: url("../Images/img/schoolgirl-studying-at-home-with-a-notebook-and-do-BL7HVPW.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.navbar{
+    background: transparent linear-gradient(90deg, #f18c08 0%, #d17a07 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000096;
+    opacity: 0.9;
+    height:3em;
+
+}
+.navbar-brand{
+    padding-right: 50%;
+}
+.navbar img{
+    height: 2em;
+    width: 5em;
+}
+
+/* Log In btn */
+.btn{
+    font: normal normal bold ;
+    font-size: 20px/24px;
+    letter-spacing: 0px;
+    color: #EAEAEA;
+    border-color: #EAEAEA;
+    border-radius: 0.5em;
+    opacity: 1;
+}
+.btn:hover{
+background-color: #EAEAEA;
+border-color: #EAEAEA;
+color:#f18c08;
+
+}
+
+
+
+/* header css */
+/* header main page  */
+.header-top{
+    overflow: hidden;
+    width: 100vw;
+    height: 80vh;
+}
+
+.wrapper-mian-header{
+    width: 100vw;
+    height: 80vh;
+    display: grid;
+    align-items: center;
+   
+}
+
+.txt-main{
+    margin-left: 4em;
+}
+.wrapper-mian-header p{
+    font-size: 40px;
+    letter-spacing: 0px;
+    color: #260149;
+    opacity: 1; 
+    color: #EAEAEA;
+}
+.txt-care{
+    text-align: center;
+    width:10em;
+    background-color: #260149;
+}
+.txt-h1{
+    width:18em;  
+}
+
+ /* section  */
+.sec-card{
+    background-color: #EAEAEA;
+    display: grid;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2em 0 2em 0;
+    border-radius: 3em 3em 0 0;
+    color: #260149;
+    width: 100%;
+    overflow: hidden;
+}
+/* cards  */
+.card-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    background-color: white;
+    width: 15em;
+    height: 13em;
+    margin: 1em;
+    box-shadow: 0px 3px 6px #2b05563d;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+.card img{
+    height: 15em;
+}
+.circle{
+    background-color: #ffb13ce1;
+    box-shadow: 0px 3px 6px #00000073;
+    width: 8em;
+    height: 8em;
+    border-radius: 100%;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.circle img{
+    width: 5em;
+    height: 5em;
+}
+
+
+/* default makes the card without colors borders and shadow */
+.default{
+background-color: inherit;
+box-shadow:inherit;
+border-style: none;
+}
+
+/* service section  */
+/* important !!!! */
+/* this class is used for make the efect on the section service  */
+/* it uses elemnt from .sec-card  */
+.services{
+    border-radius: inherit;
+    background: transparent linear-gradient(90deg, #f18c08 0%, #d17a07 100%) 0% 0% no-repeat padding-box;
+    color: #EAEAEA;
+    height: auto;
+    
+}
+/* this card use elemet from class card  */
+.services .card{
+    background-color: #EAEAEA;
+    color: #000000a9;
+    height: 21.5em;
+    justify-content:space-around;
+    padding: 0 0.3em 0 0.3em;
+
+}
+/* imagem size service  */
+.services .card img{
+    width: 5em;
+    height: 5em;
+}
+.services .card h1{
+    font-size: 1.2em;
+}
+.txt-services{
+    padding: 1em 0 2em 0;
+}
+
+/* btn header  */
+.more{
+    width: 65em;
+    height: 2.2em;
+    display: flex;
+    justify-content:right;
+   
+}
+.btn-header{
+    border-color: #260149;
+    background-color: #260149;
+    border-radius:inherit;
+    border-radius: 0.5em;
+}
+.btn-header:hover{
+    background-color: #260149;
+    border-color: #f18c08;
+}
+
+/* end of service  */
+/* .......................................................................................................................................... */
+
+/* insights section */
+/* it uses elemnt from .sec-card  */
+.insights{
+    border-radius: inherit;
+}
+.insights p{
+    margin: 0 20em 0 20em;
+}
+
+.insights .card{
+    width: 20em;
+    height: 15em;
+    
+}
+/* end of insights */
+/* .......................................................................................................................................... */
+/* footer tag  */
+
+.sec-contact{
+    height: 30em;
+    width: 100vw;
+}
+.footer{
+    width: 100vw;
+    height: 311px;
+    background: transparent linear-gradient(90deg, #f18c08 0%, #d17a07 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    color:white;
+    display: grid; 
+    align-content: center;
+    overflow: hidden;
+}
+.wrapper-footer{
+    display: flex;
+    align-self: center;
+    justify-content:space-around;
+    margin-top: 1em;
+}
+.logo img{
+    height: 5em;
+    width: 15em;
+}
+/* teimonial */
+.testimonial-card{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.testimonial .card{
+    width: 40em;
+    height:22em;
+}
+.testimonial .btn-header{
+    width:25em;
+}
+.testimonial textarea{
+    height:8em;
+}
+/* testimial add  */
+
+  /* set color for options and select  */
+  .form-form{
+    color:#2B0556;
+    height: 3em;
+    width: 30em;
+    margin: 0.2em 0 0.2em 0;
+    border: 1px;
+    border-style: dotted;
+    border-radius: 0.5em;
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+/* .................................................  */
+/* orange backgrond  */
+.bg-c-orage{
+    background: transparent linear-gradient(90deg, #f18c08 0%, #d17a07 100%) 0% 0% no-repeat padding-box;
+}
+.bg-c-orage h1{
+    color:#fff ;
+}
+
+/* bckgrond color red  */
+.bg-c-red{
+    background-color: rgb(196, 4, 4);
+    border-color: rgb(168, 2, 2);
+}
+.bg-c-red:hover{
+    background-color: rgb(105, 4, 4);
+    color: #EAEAEA;
+}
+/* bckgrond color green  */
+.bg-c-green{
+    background-color: rgb(10, 155, 53);
+    border-color:  rgb(10, 155, 53);
+}
+.bg-c-green:hover{
+    background-color: rgb(6, 128, 67);
+    color: #EAEAEA;
+}
+.bg-white{
+    background: transparent linear-gradient(90deg, #eaeaea 0%, #eaeaea 100%) 0% 0% no-repeat padding-box;
+  }
+  .bg-white .card{
+    background-color: white;
+  }
+/* line on the testimonial control  */
+.line{
+    width: 100%;
+    height:2px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: rgba(0, 0, 0, 0.281);
+}
+.dispaly-flex{
+    display: flex;
+    justify-content: center;
+}
+.dispaly-flex button{
+    height: 3em;
+    margin-top: 5em;
+    margin-left: 1em;
+}
+.width-card{
+   width:70em;}
+   label{
+       color: black;
+   }
+/* Change the size of the parent dash day details card */
+.day-card{
+    width: 80vw;
+    height: 100em;
+    overflow: hidden;
+  }
+
+@media only screen and (max-width: 1350px){
+    .rigth-main-header img {
+        width: 487px;
+        height: 556px;
+    }
+    .left-main-header p {
+        font-size: 35px;
+        }
+}
+@media only screen and (max-width: 1000px){
+    .rigth-main-header img {
+        width: 387px;
+        height: 456px;
+    }
+  
+        .card-wrapper{
+            display: grid;
+            align-self: center;
+            grid-template-columns: 14em 14em;
+            padding-right: 0.5em;
+        }
+        .card{
+            width: 13em;
+            height: 10em;
+        }
+        .insights .card-wrapper{
+            grid-template-columns:none;    
+        }
+        .insights .card{
+            width: 20em;
+            height: 15em;
+        }
+        .mobileBtn{
+            display: flex;
+        }
+        .backgrond-header{
+            height: 100vh;
+            border-radius: 0;
+        }
+
+}
+
+@media only screen and (max-width: 800px){
+    .hide{
+        display: none;
+    }
+    
+    .left-main-header{
+        width: 100%;
+        height: 100%;
+        justify-content:center;
+    
+      }
+    
+    .card-wrapper p{
+        padding: 0 1em 0 1em;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .card-wrapper{
+        grid-template-columns:none;
+    }
+    .insights .card{
+        width: 20em;
+        height: 15em;
+    }
+    
+
+
+}
+.info{
+    width: 100%;
+    height: auto;
+    background-color: #EAEAEA;
+}

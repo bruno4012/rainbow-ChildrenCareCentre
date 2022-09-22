@@ -1,0 +1,35 @@
+body{
+  background: transparent linear-gradient(90deg, #eaeaea 0%, #eaeaea 100%) 0% 0% no-repeat padding-box;
+}
+/* Login css design */
+.login{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent linear-gradient(90deg, #eaeaea 0%, #eaeaea 100%) 0% 0% no-repeat padding-box;
+  margin:2em 0 2em 0;
+}
+.card-login{
+  width:25em;
+  height:25em;
+}
+.card-login input{
+  margin-bottom: 1em;
+}
+/* Contact us css design make the form bigger */
+.card-contact-us{
+  width:30em;
+  height:38em;
+}
+.btn-reg{
+  background-color: #f18c08;
+  height: 2.5em;
+  width: 10em;
+}
+.btn-reg:hover{
+  background-color:#c57308 ;
+  color: #000;
+}
+
