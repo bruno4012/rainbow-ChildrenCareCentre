@@ -2,10 +2,7 @@
 <!--Show an attractively formatted table for one row of the day-->
 <!--table. Parents can only see their child data, they can filter a-->
 <!--day. Admin can filter all children and all days.-->
-<?php
-// Turn off all error reporting
-error_reporting(0);
-?>
+
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
@@ -13,12 +10,17 @@ if(!isset($_SESSION['username'])){
 }
 ?>
 
-
-
+<html lang="en">
+<head>
+    <title>Day details:</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
 <?php include "header.html" ?>
 <div class="container">
     <div class="row justify-content-center" >
-    <?php
+        <?php
         require('mysql_connect.php');
         if ($_SESSION['role'] == "admin") {
             echo "
@@ -47,6 +49,7 @@ ON day.child_id = child.id";
                 $query = "SELECT day.child_id, day.temperature, day.breakfast, day.lunch, day.activities, day.observation, day.date, child.name FROM day JOIN child
 ON day.child_id = child.id WHERE day.child_id = '$filtered_id'";
             }
+
             if ($filtered_day){
                 $query = "SELECT day.child_id, day.temperature, day.breakfast, day.lunch, day.activities, day.observation, day.date, child.name FROM day JOIN child
 ON day.child_id = child.id WHERE day.date = '$filtered_day'";
@@ -71,7 +74,7 @@ ON day.child_id = child.id WHERE day.date = '$filtered_day' AND day.child_id = $
                                     <input type='date' name='date' class='form-control' maxlength=100 >
                                 </div>
                                 <div class='form-group'>
-                                    <button type='submit' name='send' class='btn btn-outline-success btn-header'>Send</button>
+                                    <button type='submit' name='send' class='btn btn-secondary btn-block'>Send</button>
                                 </div>
                                 <p class='text-center'><?= $msg; ?></p>
                             </form>
@@ -125,5 +128,8 @@ ON day.child_id = child.id WHERE day.child_id='$child_id' AND day.date = '$filte
                         </div>
                   </div>";
         }
-    ?>
-
+        ?>
+    </div>
+</div>
+</body>
+</html>

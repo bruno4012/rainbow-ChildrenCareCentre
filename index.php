@@ -35,16 +35,17 @@ error_reporting(0);
   <body>
   <?php
   session_start();
+//   require('mysql_connect.php');
 
-if(!isset($_SESSION['username'])){
+// if(!isset($_SESSION['username'])){
   include "header/header.php";
-}
-if($_SESSION['role'] =="admin"){
-      include "header/header_adm.php" ;
-  }
-if($_SESSION['role'] =="parent"){
-      include "header/header_parent.php" ;
-  }
+// }
+// if($_SESSION['role'] =="admin"){
+//       include "header/header_adm.php" ;
+//   }
+// if($_SESSION['role'] =="parent"){
+//       include "header/header_parent.php" ;
+//   }
 ?>
       <!-- .............................................................................................................................  -->
       <!-- heade -->
@@ -67,25 +68,25 @@ if($_SESSION['role'] =="parent"){
           <div class="card-wrapper">
               <div class="card default">
                 <div class="circle">
-                  <img src="Images/icons/infant.png">
+                  <img src="images/icons/infant.png">
                 </div>
               <p>INFANTS
                 & TODDLERS</p>
             </div>
               <div class="card default"><div class="circle">
-                <img src="Images/icons/pre.png">
+                <img src="images/icons/pre.png">
               </div>
               <p>PRESCHOOL</p>
             </div>
               <div class="card default">
                 <div class="circle">
-                  <img src="Images/icons/care.png">
+                  <img src="images/icons/care.png">
                 </div>
                 <p>DROP-IN CARE</p>
               </div>
               <div class="card default">
                 <div class="circle">
-                  <img src="Images/icons/summer.png">
+                  <img src="images/icons/summer.png">
                 </div>
                 <p>SUMMER</p>
               </div>
@@ -100,22 +101,22 @@ if($_SESSION['role'] =="parent"){
         </div>
         <div class="card-wrapper">
             <div class="card">
-                <img src="Images/icons/infant.png">
+                <img src="images/icons/infant.png">
               <h1>Babies</br>(6 months to 1 year)</h1>
                <p>We work together with parents over a settling in period of a few days to ensure that your child is happy and comfortable in their new surroundings.</p>
             </div>
             <div class="card">
-                <img src="Images/icons/baby.png">
+                <img src="images/icons/baby.png">
                 <h1>Wobblers</br>(1 to 2 year)</h1>
             <p>To you its play, to them it is learning. As a wobbler, your child takes their first steps and really begins to explore the world around them.</p>
             </div>
             <div class="card">
-                <img src="Images/icons/Toddlers.png">
+                <img src="images/icons/Toddlers.png">
                 <h1>Toddlers</br>(2 to 3 years)</h1>
                 <p>We encourage and guide them to further develop their confidence, their intellectual, social and emotional development as they explore their environment.</p>
             </div>
             <div class="card">
-                <img src="Images/icons/Preschool.png">
+                <img src="images/icons/Preschool.png">
                 <h1>Preschool</br>(3 to 5 years)</br></h1>
                 <p>At Rainbow we believe in a fun, play based approach to learning and development in the early years.</p>
             </div>
@@ -152,9 +153,42 @@ if($_SESSION['role'] =="parent"){
         <h1>Upcoming Events</h1>
     </div>
     <div class="card-wrapper">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">
+            <?php
+            $query1= "SELECT * FROM feature_box WHERE id='1'";
+            $result = @mysqli_query($db_connection, $query1);
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $text1 = $row["feature_text"];
+                echo "<img class='card-img-top' src='images/uploads/".($row["feature_img"])."' alt='Card image cap'>";
+                echo "$text1";
+            }
+            ?>
+        </div>
+        <div class="card">
+            <?php
+            $query2= "SELECT * FROM feature_box WHERE id='2'";
+            $result = @mysqli_query($db_connection, $query2);
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $text2 = $row["feature_text"];
+                echo "<img class='card-img-top' src='images/uploads/".($row["feature_img"])."' alt='Card image cap'>";
+                echo "$text2";
+            }
+            ?>
+        </div>
+        <div class="card">
+            <?php
+            $query3= "SELECT * FROM feature_box WHERE id='3'";
+            $result = @mysqli_query($db_connection, $query3);
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $text3 = $row["feature_text"];
+                echo "<img class='card-img-top' src='images/uploads/".($row["feature_img"])."' alt='Card image cap'>";
+                echo "$text3";
+            }
+            ?>
+        </div>
     </div>
     </section>
 
@@ -163,7 +197,7 @@ if($_SESSION['role'] =="parent"){
      <footer class="footer">
 
        <div class="wrapper-footer">
-         <div class="logo"> <img src="images/logo/logo.png"></div>
+         <div class="logo"> <img src="images/logo.png"></div>
          <div class="txt-footer"> HOME<br> SERVICE<br> TESTIMONIAL<br>CONTACT US<br> REGISTER</div>
          <div class="txt-footer">Facebook<br> Instagram <br>Twetter</div>
        </div>

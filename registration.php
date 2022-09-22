@@ -54,8 +54,28 @@ if (isset($_POST['register'])){
     // close connection
     mysqli_close($db_connection);
     $msg = "You were successfully registered!";
+    require_once ('../PHPMailer-5.2-stable/PHPMailerAutoload.php');
+    $mail = new PHPMailer();
+    $mail->isSMTP();
+    $mail->SMTPAuth=true;
+    $mail->SMTPSecure='ssl';
+    $mail->Host='smtp.gmail.com';
+    $mail->Port='465';
+    $mail->isHTML();
+    $mail->Username='rainbowcare357@gmail.com';
+    $mail->Password='Rainbow123#';
+    $mail->setFrom('noreply@howcode.org');
+    $mail->Subject='Registered';
+    $mail->Body='You were registered.';
+    $mail->AddAddress($email);
+    try {
+        $mail->Send();
+    } catch (phpmailerException $e) {
+        echo ($e);
+    }
 }
 ?>
+
 
 <html lang="en">
 <head>
@@ -67,7 +87,7 @@ if (isset($_POST['register'])){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
-    
+
 </head>
 <body>
 <?php
@@ -298,9 +318,9 @@ if($_SESSION['role'] =="parent"){
 
 
                 <label class="btn btn-secondary btn-block btn-reg" id="calculate_fee" onclick="displayFee()" style="margin-bottom:1rem; color: white">Calculate fee</label>
-          
-          
-  
+
+
+
             <?php
                     require('mysql_connect.php');
                     $query4 = "SELECT * FROM fees";
@@ -363,7 +383,7 @@ if($_SESSION['role'] =="parent"){
                     echo "<p class='calculate' id='part_wobbler_3' style='display: none''>Weekly fee: €".$part_wobbler_3."</p>";
                     echo "<p class='calculate' id='part_wobbler_5' style='display: none''>Weekly fee: €".$part_wobbler_5."</p>";
 
-                    echo "<p class='calculate' id='full_preschool_1' style='display: none''>Weekly fee: €".$full_preschool_1."</p>";
+                    echo "<p class='calculate' id='full_preschool_1' style='display: none''>Weekly fee: €".$full_preschool_1 ."</p>";
                     echo "<p class='calculate' id='full_preschool_3' style='display: none''>Weekly fee: €".$full_preschool_3."</p>";
                     echo "<p class='calculate' id='full_preschool_5' style='display: none''>Weekly fee: €".$full_preschool_5."</p>";
                     echo "<p class='calculate' id='part_preschool_1' style='display: none''>Weekly fee: €".$part_preschool_1."</p>";
@@ -400,11 +420,12 @@ if($_SESSION['role'] =="parent"){
                 <div class="form-group">
                     <button type="submit" name="register" class="btn btn-secondary btn-block btn-reg">Register</button>
                 </div>
+                <p class="text-center"><?= $msg; ?></p>
                 </form>
           </div>
             </div>
                 </header>
-                
+
                 <footer class="footer">
 
              <div class="wrapper-footer">

@@ -56,7 +56,7 @@ if($_SESSION['role'] =="parent"){
       <section class="sec-card services">
        <div class="card-wrapper">
         <div class="card">
-          <img src="Images/icons/infant.png">
+          <img src="images/icons/infant.png">
         <h1>Babies</br>(6 months to 1 year)</h1>
          <p>We work together with parents over a settling in period of a few days to ensure that your child is happy and comfortable in their new surroundings.</p>
       </div>
@@ -67,15 +67,15 @@ if($_SESSION['role'] =="parent"){
            </div>
        </div>
        <div class="more">
-        <form class="d-flex" action="babies.html">
-          <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
-        </form>
+           <a href="registration.php">
+               <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
+           </a>
        </div>
      </section>
      <section class="sec-card services bg-white">
       <div class="card-wrapper">
         <div class="card">
-          <img src="Images/icons/baby.png">
+          <img src="images/icons/baby.png">
           <h1>Wobblers</br>(1 to 2 year)</h1>
         <p>To you its play, to them it is learning. As a wobbler, your child takes their first steps and really begins to explore the world around them.</p>
         </div>
@@ -86,15 +86,15 @@ if($_SESSION['role'] =="parent"){
           </div>
           </div>
           <div class="more">
-            <form class="d-flex" action="babies.html">
-              <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
-            </form>
+              <a href="registration.php">
+                  <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
+              </a>
            </div>
     </section>
     <section class="sec-card services">
      <div class="card-wrapper">
        <div class="card">
-           <img src="Images/icons/Toddlers.png">
+           <img src="images/icons/Toddlers.png">
                 <h1>Toddlers</br>(2 to 3 years)</h1>
                 <p>We encourage and guide them to further develop their confidence, their intellectual, social and emotional development as they explore their environment.</p>
        </div>
@@ -105,15 +105,15 @@ if($_SESSION['role'] =="parent"){
          </div>
          </div>
          <div class="more">
-          <form class="d-flex" action="babies.html">
-            <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
-          </form>
+             <a href="registration.php">
+                 <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
+             </a>
          </div>
    </section>
    <section class="sec-card services bg-white">
     <div class="card-wrapper">
       <div class="card">
-        <img src="Images/icons/Preschool.png">
+        <img src="images/icons/Preschool.png">
           <h1>Preschool</br>(3 to 5 years)</br></h1>
           <p>At Rainbow we believe in a fun, play based approach to learning and development in the early years.</p>
       </div>
@@ -125,9 +125,9 @@ if($_SESSION['role'] =="parent"){
         </div>
       </div>
       <div class="more">
-        <form class="d-flex" action="babies.html">
-          <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
-        </form>
+          <a href="registration.php">
+              <button class="btn btn-outline-success btn-header" type="submit">Register Now</button>
+          </a>
        </div>
   </section>
   <footer class="footer">

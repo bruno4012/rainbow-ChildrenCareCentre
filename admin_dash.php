@@ -74,23 +74,75 @@ if(!isset($_SESSION['username']) || $_SESSION['role'] !="admin"){
                include "testimonial_manage.php";
                ?>
  
-     <section id="add_testimonial"class="sec-card insights">
-      <div class="txt-services">
-        <h1>children day details</h1>
-    </div>
-    <div class="card-wrapper testimonial">
-    <div class="include-dash dispaly-flex">
-          <form class="d-flex" action="day_details_edit.php">
-            <button class="btn btn-outline-success btn-header" type="submit">Add new details</button>
-          </form>
-               <div>
-    </div>
+<!--     <section id="add_testimonial"class="sec-card insights">-->
+<!--      <div class="txt-services">-->
+<!--        <h1>children day details</h1>-->
+<!--    </div>-->
+<!--    <div class="card-wrapper testimonial">-->
+<!--    <div class="include-dash dispaly-flex">-->
+<!--          <form class="d-flex" action="day_details_edit.php">-->
+<!--            <button class="btn btn-outline-success btn-header" type="submit">Add new details</button>-->
+<!--          </form>-->
+<!--               <div>-->
+<!--    </div>-->
+<!--    </section>-->
+<!--     <section class="info">-->
+<!--               --><?php
+//               include "day_details.php";
+//               ?>
+<!--     </section>-->
+    <section class="sec-card services dash bg-white">
+        <div class="card-wrapper">
+            <div class="card card-dash">
+                <h1 class="title-dash">Add Day details</h1>
+                <div class="include-dash">
+                    <?php
+                    include "day_details_edit.php";
+                    ?>
+                    <div>
+                    </div>
+                </div>
     </section>
-     <section class="info">
-               <?php
-               include "day_details.php";
-               ?>
-              </section>
+    <section class="sec-card services">
+        <div class="card-wrapper">
+            <div class="card card-dash">
+                <h1 class="title-dash">Day details</h1>
+                <div class="include-dash">
+                    <?php
+                    include "day_details.php";
+                    ?>
+                    <div>
+                    </div>
+                </div>
+    </section>
+
+    <section class="sec-card services dash bg-white">
+        <div class="card-wrapper">
+            <div class="card card-dash">
+                <h1 class="title-dash">Fees</h1>
+                <div class="include-dash">
+                    <?php
+                    include "registration_edit.php";
+                    ?>
+                    <div>
+                    </div>
+                </div>
+    </section>
+
+    <section class="sec-card services dash">
+        <div class="card-wrapper">
+            <div class="card card-dash">
+                <h1 class="title-dash">Index Edit</h1>
+                <div class="include-dash">
+                    <?php
+                    include "index_edit.php";
+                    ?>
+                <div>
+            </div>
+        </div>
+    </section>
+
+
   <footer class="footer">
 
     <div class="wrapper-footer">
@@ -101,7 +153,7 @@ if(!isset($_SESSION['username']) || $_SESSION['role'] !="admin"){
     <div class="wrapper-footer">
      <div class="txt-footer"> <p>©2021, Rainbow children care centre Ltda. All Rights Reserved.</p></div>
    </div>
-   
+
   </footer>
    </body>
  </html>

@@ -9,99 +9,99 @@ if(!isset($_SESSION['username']) || $_SESSION['role'] !="admin"){
 
 ?>
 
- <?php
-     $msg = "";
-     require('mysql_connect.php');
-     $query4 = "SELECT * FROM fees";
-     $result4 = @mysqli_query($db_connection, $query4);
-     if ($result4->num_rows == 1) {
-         $row = $result4->fetch_assoc();
-         $baby_fee = $row["baby"];
-         $toddler_fee = $row["toddler"];
-         $wobbler_fee = $row["wobbler"];
-         $preschool_fee = $row["preschool"];
-         //                      plan  fees options:
-         $full_baby_1 = $baby_fee;
-         $full_baby_3 = number_format(3 * $baby_fee,2);
-         $full_baby_5 = number_format(5 * $baby_fee,2);
-         $part_baby_1 = number_format($baby_fee / 2,2);
-         $part_baby_3 = number_format(3 * $baby_fee / 2,2);
-         $part_baby_5 = number_format(5 * $baby_fee / 2,2);
+<?php
+$msg = "";
+require('mysql_connect.php');
+$query4 = "SELECT * FROM fees";
+$result4 = @mysqli_query($db_connection, $query4);
+if ($result4->num_rows == 1) {
+    $row = $result4->fetch_assoc();
+    $baby_fee = $row["baby"];
+    $toddler_fee = $row["toddler"];
+    $wobbler_fee = $row["wobbler"];
+    $preschool_fee = $row["preschool"];
+    //                      plan  fees options:
+    $full_baby_1 = $baby_fee;
+    $full_baby_3 = number_format(3 * $baby_fee,2);
+    $full_baby_5 = number_format(5 * $baby_fee,2);
+    $part_baby_1 = number_format($baby_fee / 2,2);
+    $part_baby_3 = number_format(3 * $baby_fee / 2,2);
+    $part_baby_5 = number_format(5 * $baby_fee / 2,2);
 
-         $full_toddler_1 = $toddler_fee;
-         $full_toddler_3 = number_format(3 * $toddler_fee,2);
-         $full_toddler_5 = number_format(5 * $toddler_fee,2);
-         $part_toddler_1 = number_format($toddler_fee / 2,2);
-         $part_toddler_3 = number_format(3 * $toddler_fee / 2,2);
-         $part_toddler_5 = number_format(5 * $toddler_fee / 2,2);
+    $full_toddler_1 = $toddler_fee;
+    $full_toddler_3 = number_format(3 * $toddler_fee,2);
+    $full_toddler_5 = number_format(5 * $toddler_fee,2);
+    $part_toddler_1 = number_format($toddler_fee / 2,2);
+    $part_toddler_3 = number_format(3 * $toddler_fee / 2,2);
+    $part_toddler_5 = number_format(5 * $toddler_fee / 2,2);
 
-         $full_wobbler_1 = $wobbler_fee;
-         $full_wobbler_3 = number_format(3 * $wobbler_fee,2);
-         $full_wobbler_5 = number_format(5 * $wobbler_fee,2);
-         $part_wobbler_1 = number_format($wobbler_fee / 2,2);
-         $part_wobbler_3 = number_format(3 * $wobbler_fee / 2,2);
-         $part_wobbler_5 = number_format(5 * $wobbler_fee / 2,2);
+    $full_wobbler_1 = $wobbler_fee;
+    $full_wobbler_3 = number_format(3 * $wobbler_fee,2);
+    $full_wobbler_5 = number_format(5 * $wobbler_fee,2);
+    $part_wobbler_1 = number_format($wobbler_fee / 2,2);
+    $part_wobbler_3 = number_format(3 * $wobbler_fee / 2,2);
+    $part_wobbler_5 = number_format(5 * $wobbler_fee / 2,2);
 
-         $full_preschool_1 = $preschool_fee;
-         $full_preschool_3 = number_format(3 * $preschool_fee,2);
-         $full_preschool_5 = number_format(5 * $preschool_fee,2);
-         $part_preschool_1 = number_format($preschool_fee / 2,2);
-         $part_preschool_3 = number_format(3 * $preschool_fee / 2,2);
-         $part_preschool_5 = number_format(5 * $preschool_fee / 2,2);
+    $full_preschool_1 = $preschool_fee;
+    $full_preschool_3 = number_format(3 * $preschool_fee,2);
+    $full_preschool_5 = number_format(5 * $preschool_fee,2);
+    $part_preschool_1 = number_format($preschool_fee / 2,2);
+    $part_preschool_3 = number_format(3 * $preschool_fee / 2,2);
+    $part_preschool_5 = number_format(5 * $preschool_fee / 2,2);
 
-         mysqli_close($db_connection);
-     }
+    mysqli_close($db_connection);
+}
 
 
-     if (isset($_POST['update_fee'])){
-         require('mysql_connect.php');
-         $baby_fee = $_POST['baby_fee'];
-         $toddler_fee = $_POST['toddler_fee'];
-         $wobbler_fee = $_POST['wobbler_fee'];
-         $preschool_fee = $_POST['preschool_fee'];
-         $query = "UPDATE fees SET baby='$baby_fee', toddler='$toddler_fee', wobbler='$wobbler_fee', preschool='$preschool_fee'";
-         $result = @mysqli_query($db_connection, $query);
+if (isset($_POST['update_fee'])){
+    require('mysql_connect.php');
+    $baby_fee = $_POST['baby_fee'];
+    $toddler_fee = $_POST['toddler_fee'];
+    $wobbler_fee = $_POST['wobbler_fee'];
+    $preschool_fee = $_POST['preschool_fee'];
+    $query = "UPDATE fees SET baby='$baby_fee', toddler='$toddler_fee', wobbler='$wobbler_fee', preschool='$preschool_fee'";
+    $result = @mysqli_query($db_connection, $query);
 
-         $query4 = "SELECT * FROM fees";
-         $result4 = @mysqli_query($db_connection, $query4);
-         if ($result4->num_rows == 1) {
-             $row = $result4->fetch_assoc();
-             $baby_fee = $row["baby"];
-             $toddler_fee = $row["toddler"];
-             $wobbler_fee = $row["wobbler"];
-             $preschool_fee = $row["preschool"];
-             //                      plan  fees options:
-             $full_baby_1 = $baby_fee;
-             $full_baby_3 = number_format(3 * $baby_fee,2);
-             $full_baby_5 = number_format(5 * $baby_fee,2);
-             $part_baby_1 = number_format($baby_fee / 2,2);
-             $part_baby_3 = number_format(3 * $baby_fee / 2,2);
-             $part_baby_5 = number_format(5 * $baby_fee / 2,2);
+    $query4 = "SELECT * FROM fees";
+    $result4 = @mysqli_query($db_connection, $query4);
+    if ($result4->num_rows == 1) {
+        $row = $result4->fetch_assoc();
+        $baby_fee = $row["baby"];
+        $toddler_fee = $row["toddler"];
+        $wobbler_fee = $row["wobbler"];
+        $preschool_fee = $row["preschool"];
+        //                      plan  fees options:
+        $full_baby_1 = $baby_fee;
+        $full_baby_3 = number_format(3 * $baby_fee,2);
+        $full_baby_5 = number_format(5 * $baby_fee,2);
+        $part_baby_1 = number_format($baby_fee / 2,2);
+        $part_baby_3 = number_format(3 * $baby_fee / 2,2);
+        $part_baby_5 = number_format(5 * $baby_fee / 2,2);
 
-             $full_toddler_1 = $toddler_fee;
-             $full_toddler_3 = number_format(3 * $toddler_fee,2);
-             $full_toddler_5 = number_format(5 * $toddler_fee,2);
-             $part_toddler_1 = number_format($toddler_fee / 2,2);
-             $part_toddler_3 = number_format(3 * $toddler_fee / 2,2);
-             $part_toddler_5 = number_format(5 * $toddler_fee / 2,2);
+        $full_toddler_1 = $toddler_fee;
+        $full_toddler_3 = number_format(3 * $toddler_fee,2);
+        $full_toddler_5 = number_format(5 * $toddler_fee,2);
+        $part_toddler_1 = number_format($toddler_fee / 2,2);
+        $part_toddler_3 = number_format(3 * $toddler_fee / 2,2);
+        $part_toddler_5 = number_format(5 * $toddler_fee / 2,2);
 
-             $full_wobbler_1 = $wobbler_fee;
-             $full_wobbler_3 = number_format(3 * $wobbler_fee,2);
-             $full_wobbler_5 = number_format(5 * $wobbler_fee,2);
-             $part_wobbler_1 = number_format($wobbler_fee / 2,2);
-             $part_wobbler_3 = number_format(3 * $wobbler_fee / 2,2);
-             $part_wobbler_5 = number_format(5 * $wobbler_fee / 2,2);
+        $full_wobbler_1 = $wobbler_fee;
+        $full_wobbler_3 = number_format(3 * $wobbler_fee,2);
+        $full_wobbler_5 = number_format(5 * $wobbler_fee,2);
+        $part_wobbler_1 = number_format($wobbler_fee / 2,2);
+        $part_wobbler_3 = number_format(3 * $wobbler_fee / 2,2);
+        $part_wobbler_5 = number_format(5 * $wobbler_fee / 2,2);
 
-             $full_preschool_1 = $preschool_fee;
-             $full_preschool_3 = number_format(3 * $preschool_fee,2);
-             $full_preschool_5 = number_format(5 * $preschool_fee,2);
-             $part_preschool_1 = number_format($preschool_fee / 2,2);
-             $part_preschool_3 = number_format(3 * $preschool_fee / 2,2);
-             $part_preschool_5 = number_format(5 * $preschool_fee / 2,2);
-         }
-         mysqli_close($db_connection);
-         $msg = " Fees successfully updated.";
-     }
+        $full_preschool_1 = $preschool_fee;
+        $full_preschool_3 = number_format(3 * $preschool_fee,2);
+        $full_preschool_5 = number_format(5 * $preschool_fee,2);
+        $part_preschool_1 = number_format($preschool_fee / 2,2);
+        $part_preschool_3 = number_format(3 * $preschool_fee / 2,2);
+        $part_preschool_5 = number_format(5 * $preschool_fee / 2,2);
+    }
+    mysqli_close($db_connection);
+    $msg = " Fees successfully updated.";
+}
 
 
 ?>
